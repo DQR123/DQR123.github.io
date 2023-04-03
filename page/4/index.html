@@ -307,55 +307,9 @@
 </header>
 
     
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -392,195 +346,12 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:3257962529@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3257962529" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3257962529" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
 
 
 <main class="content">
 
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;欢迎来到我的博客
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            每个人都是独一无二的，每个人都有自己的特质和价值。不要让别人的眼光左右自己，要活出自己的风格，做一个独具魅力的人。 没有天生的才华，只有持之以恒的努力。成功需要勇气和毅力，不要放弃自己的梦想，因为只有努力才能创造奇迹。 生活中最美好的事情就是发现自己的能力和价值，实现自己的理想与梦想。做一个积极向上的人，为自己和他人带来更多的快乐和幸福。
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
-<div class="video-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;B站视频
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="dplayer" class="dplayer-video"
-                     style="height: 400px;"></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/dplayer/DPlayer.min.js"></script>
-<script>
-    $(function () {
-        new DPlayer({
-            container: document.getElementById('dplayer'),
-            autoplay: 'false' === 'true',
-            theme: '#42b983',
-            loop: 'false' === 'true',
-            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
-            preload: 'auto',
-            volume: Number('0.7'),
-            video: {
-                url: '/medias/shiping.mp4',
-                pic: '',
-                thumbnails: ''
-            }
-        });
-    });
-</script>
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     
 
     
@@ -591,7 +362,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC7%E7%AF%87%EF%BC%9A%E5%B8%B8%E8%A7%81WebShell%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+                    <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC5%E7%AF%87%EF%BC%9A%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92%EF%BC%88%E4%B8%80%EF%BC%89/">
                         <div class="card-image">
                             
                             
@@ -604,10 +375,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                攻击者在入侵网站时，通常要通过各种方式写入Webshell，从而获得服务器的控制权限，比如执行系统命令、读取配置文件、窃取用户数据，篡改网站页面等操作。
-本文介绍十款常用的Webshell管理工具，以供你选择，你会选择哪一个？
-
-1、中国菜
+                                第5篇：挖矿病毒（一）0x00 前言​	随着虚拟货币的疯狂炒作，挖矿病毒已经成为不法分子利用最为频繁的攻击方式之一。病毒传播者可以利用个人电脑或服务器进行挖矿，具体现象为电脑CPU占用率高，C盘可使用空间骤降，电脑温度升高，风扇噪声增大等问
                             
                         </div>
                         <div class="publish-info">
@@ -629,7 +397,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC4%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E5%90%8E%E9%97%A8%E7%AF%87/">
+                    <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC4%E7%AF%87%EF%BC%9AARP%E7%97%85%E6%AF%92/">
                         <div class="card-image">
                             
                             
@@ -642,10 +410,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                本文将对Linux下常见的权限维持技术进行解析，知己知彼百战不殆。
-1、一句话添加用户和密码
-添加普通用户：
-1234567891011# 创建一个用户名guest，密码123456的普通用户useradd -p `openssl pass
+                                第4篇：ARP病毒0x00 前言　　ARP病毒并不是某一种病毒的名称，而是对利用arp协议的漏洞进行传播的一类病毒的总称，目前在局域网中较为常见。发作的时候会向全网发送伪造的ARP数据包，严重干扰全网的正常运行，其危害甚至比一些蠕虫病毒还要
                             
                         </div>
                         <div class="publish-info">
@@ -667,7 +432,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC3%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E9%9A%90%E8%97%8F%E7%AF%87/">
+                    <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC3%E7%AF%87%EF%BC%9A%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92/">
                         <div class="card-image">
                             
                             
@@ -680,8 +445,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                0x00 ǰ���������ڻ�ȡ������Ȩ�޺󣬻�ͨ��һЩ�����������Լ����ټ��ͺ����ļ������Ľ���Linux�µļ������ؼ�����
-0x01 �����ļ�Linux �´���һ�����
+                                第3篇：勒索病毒0x00 前言​	勒索病毒，是一种新型电脑病毒，主要以邮件、程序木马、网页挂马的形式进行传播。该病毒性质恶劣、危害极大，一旦感染将给用户带来无法估量的损失。这种病毒利用各种加密算法对文件进行加密，被感染者一般无法解密，必须拿
                             
                         </div>
                         <div class="publish-info">
@@ -703,7 +467,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC5%E7%AF%87%EF%BC%9AMySQL%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+                    <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC2%E7%AF%87%EF%BC%9A%E8%A0%95%E8%99%AB%E7%97%85%E6%AF%92/">
                         <div class="card-image">
                             
                             
@@ -716,8 +480,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                第5篇:MySQL日志分析常见的数据库攻击包括弱口令、SQL注入、提升权限、窃取备份等。对数据库日志进行分析，可以发现攻击行为，进一步还原攻击场景及追溯攻击源。
-0x01 Mysql日志分析general query log能记录成功连接和
+                                第2篇：蠕虫病毒0x00 前言​	蠕虫病毒是一种十分古老的计算机病毒，它是一种自包含的程序（或是一套程序），通常通过网络途径传播，每入侵到一台新的计算机，它就在这台计算机上复制自己，并自动执行它自身的程序。
+常见的蠕虫病毒：熊猫烧香病毒 、
                             
                         </div>
                         <div class="publish-info">
@@ -739,7 +503,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC4%E7%AF%87%EF%BC%9AMSSQL%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+                    <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC1%E7%AF%87%EF%BC%9AFTP%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/">
                         <div class="card-image">
                             
                             
@@ -752,8 +516,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                第4篇:MSSQL日志分析常见的数据库攻击包括弱口令、SQL注入、提升权限、窃取备份等。对数据库日志进行分析，可以发现攻击行为，进一步还原攻击场景及追溯攻击源。
-0x01 MSSQL日志分析首先，MSSQL数据库应启用日志记录功能，默认配置
+                                第1篇：FTP暴力破解0x00 前言​	FTP是一个文件传输协议，用户通过FTP可从客户机程序向远程主机上传或下载文件，常用于网站代码维护、日常源码备份等。如果攻击者通过FTP匿名访问或者弱口令获取FTP权限，可直接上传webshell，进
                             
                         </div>
                         <div class="publish-info">
@@ -775,7 +538,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC3%E7%AF%87%EF%BC%9AWeb%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+                    <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/README/">
                         <div class="card-image">
                             
                             
@@ -788,119 +551,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                第3篇:Web日志分析ox01  Web日志Web访问日志记录了Web服务器接收处理请求及运行时错误等各种原始信息。通过对WEB日志进行的安全分析，不仅可以帮助我们定位攻击者，还可以帮助我们还原攻击路径，找到网站存在的安全漏洞并进行修复。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                董小瑞
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC2%E7%AF%87%EF%BC%9ALinux%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                第2篇:Linux日志分析0x00 前言Linux系统拥有非常灵活和强大的日志功能，可以保存几乎所有的操作记录，并可以从中检索出我们需要的信息。 本文简介一下Linux系统日志及日志分析技巧。
-0x01 日志简介日志默认存放位置：&#x2F
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                董小瑞
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/%E7%AC%AC1%E7%AF%87%EF%BC%9AWindows%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                第1篇:Windows日志分析0x01 Windows事件日志简介Windows系统日志是记录系统中硬件、软件和系统问题的信息，同时还可以监视系统中发生的事件。用户可以通过它来检查错误发生的原因，或者寻找受到攻击时攻击者留下的痕迹。
-Win
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                董小瑞
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC02%E7%AB%A0%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AF%87/README/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                第02章：日志分析 第1篇:Window日志分析
- 第2篇:Linux日志分析
-第3篇:Web日志分析
-第4篇:MSSQL日志分析
-第5篇:MySQL日志分析
+                                第04章: Windows实战篇第1篇：FTP暴力破解
+第2篇：蠕虫病毒
+第3篇：勒索病毒
+第4篇：ARP病毒
+第5篇：挖矿病毒（一）
+第6篇：挖矿病毒（二）
 
                             
                         </div>
@@ -923,7 +579,7 @@ Win
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/04/03/%E7%AC%AC01%E7%AB%A0%EF%BC%9A%E5%85%A5%E4%BE%B5%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC5%E7%AF%87%EF%BC%9A%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92%E8%87%AA%E6%95%91%E6%8C%87%E5%8D%97/">
+                    <a href="/2023/03/30/%E6%BA%AF%E6%BA%90/">
                         <div class="card-image">
                             
                             
@@ -936,13 +592,144 @@ Win
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                第5篇：勒索病毒自救指南前言经常会有一些小伙伴问：中了勒索病毒，该怎么办，可以解密吗？
-第一次遇到勒索病毒是在早几年的时候，客户因网站访问异常，进而远程协助进行排查。登录服务器，在站点目录下发现所有的脚本文件及附件后缀名被篡改，每个文件夹下
+                                IP溯源溯源过程中切勿用客户的网络去访问，防止对方的VPS上有JS钩子，导致对方拥有我的网络信息，尽量用虚拟机、浏览器无痕等模式进行访问
+判断IP状态
+静动态判断
+国内
+存在rDNS为静态     www.ipip.net 
+查询相关备案信
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                董小瑞
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/30/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                计算机网络arp 协议的工作原理 
+地址解析协议，即 ARP（Address Resolution Protocol），是根据 IP 地址获取物理地址的一个TCP&#x2F;IP 协议。 
+
+发送 ARP 请求的以太网数据帧 广播 到以太网
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                董小瑞
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/30/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                记录一些具体面试的问题，可以作为参考深信服一面:了解哪些漏洞 
+文件上传有哪些防护方式 
+用什么扫描端口，目录 
+如何判断注入 
+注入有防护怎么办 
+有没有写过 tamper 
+3306 1443 8080 是什么端口 
+计算机网络从物理层
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                董小瑞
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/03/30/%E8%80%83%E6%A0%B8%E4%BA%8C/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                考核二_LAMP搭建环境
+Centos7.9
+mysql5.7
+php-最新
+apache
+
+要求
+看视频并自主搭建LAMP。
+LAMP搭建完成，显示的内容为考核一的内容
+使用SSH远程登录
+
+资源
+Linux基础1.Linux基础 htt
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
                             </span>
                             <span class="publish-author">
                                 
@@ -967,17 +754,18 @@ Win
     <div class="row">
         <div class="col s6 m4 l4">
             
-            <a class="left btn-floating btn-large disabled">
+            <a href="/page/3/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-left"></i>
             </a>
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 5</div>
+            <div class="center-align b-text-gray">4 / 5</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a href="/page/2/"
+            <a href="/page/5/"
                class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-right"></i>
             </a>

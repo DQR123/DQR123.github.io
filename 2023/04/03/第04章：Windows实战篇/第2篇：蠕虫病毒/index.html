@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-30
+                    2023-04-03
                 </div>
                 
 
@@ -464,268 +464,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="IP溯源"><a href="#IP溯源" class="headerlink" title="IP溯源"></a>IP溯源</h1><p>溯源过程中<strong>切勿用客户的网络</strong>去访问，防止对方的VPS上有JS钩子，导致对方拥有我的网络信息，<strong>尽量用虚拟机、浏览器无痕等模式进行访问</strong></p>
-<h2 id="判断IP状态"><a href="#判断IP状态" class="headerlink" title="判断IP状态"></a>判断IP状态</h2><ul>
-<li>静动态判断<ul>
-<li>国内<ul>
-<li>存在rDNS为静态     <a target="_blank" rel="noopener" href="http://www.ipip.net/">www.ipip.net</a> </li>
-<li>查询相关备案信息   ipwhois.cnnic.net.cn <ul>
-<li>ALLOCATED PORTABLE 动态IP，5G&#x2F;4G&#x2F;家庭宽带等</li>
-<li>ALLOCATED NON-PORTABLE  静态IP，专线宽带&#x2F;IDC机房&#x2F;企业出口</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="IP信息收集"><a href="#IP信息收集" class="headerlink" title="IP信息收集"></a>IP信息收集</h2><h3 id="反查"><a href="#反查" class="headerlink" title="反查"></a>反查</h3><ul>
-<li>国内<ul>
-<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a><br><a target="_blank" rel="noopener" href="https://quake.360.cn/">https://quake.360.cn/</a></li>
-</ul>
-</li>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a><br><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="whois查询"><a href="#whois查询" class="headerlink" title="whois查询"></a>whois查询</h3><ul>
-<li>国外<ul>
-<li><a target="_blank" rel="noopener" href="https://www.whois.net/default.aspx">https://www.whois.net/default.aspx</a></li>
-<li><a target="_blank" rel="noopener" href="https://who.is/">https://who.is/</a></li>
-<li><a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a></li>
-</ul>
-</li>
-<li>国内<ul>
-<li><a target="_blank" rel="noopener" href="https://www.benmi.com/rwhois?q=">https://www.benmi.com/rwhois?q=</a></li>
-<li><a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></li>
-<li>不好用<ul>
-<li><a target="_blank" rel="noopener" href="http://whois.xinnet.com/">http://whois.xinnet.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://whois.aliyun.com/">https://whois.aliyun.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="备案信息"><a href="#备案信息" class="headerlink" title="备案信息"></a>备案信息</h3><ul>
-<li><p>网站查备案</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://icp.chinaz.com/">https://icp.chinaz.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.chaicp.com/">https://www.chaicp.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://gaj.sh.gov.cn/wa/newlogin/recordSearch.jsp">https://gaj.sh.gov.cn/wa/newlogin/recordSearch.jsp</a></li>
-</ul>
-</li>
-<li><p>同一个备案&#x2F;许可证号的网站</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">https://beian.miit.gov.cn/#/Integrated/index</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="判断IP是否为CDN"><a href="#判断IP是否为CDN" class="headerlink" title="判断IP是否为CDN"></a>判断IP是否为CDN</h3><ul>
-<li>原理<ul>
-<li>根据 Host 字段判断是否为绑定域名，进行跳转</li>
-</ul>
-</li>
-<li>特征<ul>
-<li>CDN会绑定许多域名</li>
-</ul>
-</li>
-<li>判断<ul>
-<li>对反绑的域名进行查询 nslookup<ul>
-<li>nslookup  -q&#x3D;cname baidu.com</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://tools.ipip.net/cdn.php">https://tools.ipip.net/cdn.php</a> 查询</li>
-<li>访问IP<ul>
-<li>通过ModHeader 修改 Host 字段值为域名</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="VPS供应商相关"><a href="#VPS供应商相关" class="headerlink" title="VPS供应商相关"></a><strong>VPS供应商相关</strong></h3><ul>
-<li>查询地址<ul>
-<li><a target="_blank" rel="noopener" href="https://myip.ms/">https://myip.ms</a><br><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a></li>
-</ul>
-</li>
-<li>常见的VPS厂商<ul>
-<li>DIGITALOCEAN</li>
-<li>Linode</li>
-</ul>
-</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>子域名：子域名的实时解析IP和历史解析IP都可以作为新的IP进行溯源关联<ul>
-<li>OneForAll — 扫描子域<ul>
-<li>python oneforall.py –target example.com run</li>
-</ul>
-</li>
-<li>teemo — 扫描邮箱<ul>
-<li>python teemo.py -d</li>
-</ul>
-</li>
-<li>subDomainsBrute — 扫描真实IP<ul>
-<li>python subDomainsBrute.py –full</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>互联网扫描库<ul>
-<li>censys.io&#x2F;ipv4 判断是否有开放端口，或者<strong>对C段分析</strong></li>
-<li>fofa.so    ip&#x3D;”11111”</li>
-<li>shodan.io</li>
-</ul>
-</li>
-<li>威胁情报库：收集关键字 反查信息：域名、邮箱<ul>
-<li>国内：<ul>
-<li>微步在线   x.threatbook.cn</li>
-</ul>
-</li>
-<li><strong>国外的</strong>：<a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com</a>  — 比较全面<br>          <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search">https://www.virustotal.com/gui/search</a>  —- 常用，需要登录</li>
-</ul>
-</li>
-</ul>
-<h2 id="第三方暴露库"><a href="#第三方暴露库" class="headerlink" title="第三方暴露库"></a>第三方暴露库</h2><ul>
-<li><p>国内</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://www.zoomeye.org/">http://www.zoomeye.org/</a></li>
-<li>​       <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a><br> ​       <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
-</ol>
-</li>
-<li><p>国外<br>   <a target="_blank" rel="noopener" href="https://censys.io/ipv4">https://censys.io/ipv4</a><br>   <a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a><br>   <a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a><br>   <a target="_blank" rel="noopener" href="https://fofa.so/">https://fofa.so/</a></p>
-</li>
-</ul>
-<h2 id="IP端口"><a href="#IP端口" class="headerlink" title="IP端口"></a>IP端口</h2><ul>
-<li><p>使用 nmap 扫描端口 ——切勿用客户的网络进行扫描</p>
-<ul>
-<li><p>nmap T4 -Pn 192.168.131.1	快速扫描top1000端口<br>nmap -Pn -p- -A -sV -oN 123.txt 127.0.0.1	全扫描</p>
-</li>
-<li><p>根据端口判断是否为跳板机</p>
-<ul>
-<li><pre><code>5555:SoftEther VPN
-1723:PPTP VPN
-500:L2TP VPN
-4500:L2TP VPN
-1701:L2TP VPN
-1194:Openvpn
-5000:Vtun 
-12975:	LogMeIn Hamachi
-1080:其他SOCKS5类代理常用端口
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>C&amp;C监听端口或黑客工具端口<br>50050	Cobalt Strike<br>8080	   nps	一些自定义木马也喜欢用这种类型的端口<br>8834	   nessusWeb	界面管理端口<br>4444	   hfs</p>
-</li>
-</ul>
-</li>
-<li><p>对C段资产进行分析</p>
-<ul>
-<li>nmap -sP -oN 123.txt  192.168.131.0&#x2F;24</li>
-<li>存在大量的 80&#x2F;443 端口该C段为IDC或企业的概率比较大</li>
-</ul>
-</li>
-</ul>
-<h2 id="IP地址定位"><a href="#IP地址定位" class="headerlink" title="IP地址定位"></a>IP地址定位</h2><ul>
-<li>IP定位常用网站<ul>
-<li>国内<ul>
-<li>IP 定位<ul>
-<li><a target="_blank" rel="noopener" href="https://www.opengps.cn/Data/IP/LocHighAcc.aspx">https://www.opengps.cn/Data/IP/LocHighAcc.aspx</a><br><a target="_blank" rel="noopener" href="https://www.ipplus360.com/">https://www.ipplus360.com/</a><br><a target="_blank" rel="noopener" href="http://www.chaipip.com/">www.chaipip.com</a><br><a target="_blank" rel="noopener" href="https://met.red/h/location/queryIp">https://met.red/h/location/queryIp</a></li>
-</ul>
-</li>
-<li>综合查询<ul>
-<li><a target="_blank" rel="noopener" href="http://www.ipip.net/">www.ipip.net</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.whoxy.com/">https://www.whoxy.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>国外<ul>
-<li>iplocation.com<br><a target="_blank" rel="noopener" href="https://dev.maxmind.com/geoip/geoip2/geolite2/">https://dev.maxmind.com/geoip/geoip2/geolite2/</a></li>
-<li>综合信息查询<ul>
-<li><a target="_blank" rel="noopener" href="https://bgp.he.net/">https://bgp.he.net/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.whoxy.com/">https://www.whoxy.com/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>高德地图法<ul>
-<li>修改 X-Forwarded-For 为IP地址，再次刷新</li>
-</ul>
-</li>
-<li>地址搜出来之后，通过地图搜索附近的公司</li>
-</ul>
-<h1 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h1><ul>
-<li>对查询页面进行相关的搜索<ul>
-<li>com、cn  网站</li>
-<li>@  邮箱</li>
-</ul>
-</li>
-</ul>
-<h1 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h1><ul>
-<li><p>Github 搜索关键字</p>
-<ul>
-<li>查看相关代码（code），部分会在注释中署名。</li>
-</ul>
-</li>
-<li><h2 id="利用-Google-hack-语法搜索邮箱、域名等关键字"><a href="#利用-Google-hack-语法搜索邮箱、域名等关键字" class="headerlink" title="利用 Google hack 语法搜索邮箱、域名等关键字"></a>利用 Google hack 语法搜索邮箱、域名等关键字</h2><ul>
-<li>intext:”xxxx”</li>
-</ul>
-</li>
-<li><p>IP直接搜索</p>
-<ul>
-<li>某些论坛可能会对用户访问的IP进行记录</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><ul>
-<li>.dotm	邮件钓鱼<ul>
-<li>Normal.dotm   为word的启动模板</li>
-</ul>
-</li>
-<li>HTTPAPI 2.0   为Windows默认开启的80端口的标识</li>
-<li>对IP反查时建议也加上自动化漏扫，扫出来有漏洞数量多的为 <strong>跳板机&#x2F;肉鸡</strong></li>
-</ul>
-<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><p>161.35.76.1</p>
-<ul>
-<li>直接搜索IP，判断国内还是国外</li>
-<li>国外：virustotal.com&#x2F;gui&#x2F;search<ul>
-<li>查看VPS厂商 Autonomous System Label<ul>
-<li>Autonomous System Label	DIGITALOCEAN-ASN（VPS厂商）</li>
-</ul>
-</li>
-<li>查看关联的信息 ：Relation<ul>
-<li>有关联的 CS木马信息、邮件钓鱼</li>
-</ul>
-</li>
-<li>报毒情况<ul>
-<li>Detection    52&#x2F;72    72款杀毒软件、52款报毒</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>暴露库查询：<a target="_blank" rel="noopener" href="https://censys.io/ipv4">https://censys.io/ipv4</a><ul>
-<li>22 <strong>Banner</strong>：SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3<ul>
-<li>发现该VPS为 Ubuntu</li>
-</ul>
-</li>
-<li>443 HTTPS 中的 SSL 证书：C&#x3D;US, ST&#x3D;, L&#x3D;, O&#x3D;jQuery, OU&#x3D;Certificate Authority, CN&#x3D;jquery.com<ul>
-<li>jquery.com为SSL证书绑定的域名，jquery.com为默认域名</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>172.105.87.139</p>
-<ul>
-<li><h2 id="国外：virustotal-com-x2F-gui-x2F-search-查看关联的信息-：Relation-域名绑定：Domain"><a href="#国外：virustotal-com-x2F-gui-x2F-search-查看关联的信息-：Relation-域名绑定：Domain" class="headerlink" title="国外：virustotal.com&#x2F;gui&#x2F;search- 查看关联的信息 ：Relation  - 域名绑定：Domain"></a>国外：virustotal.com&#x2F;gui&#x2F;search<br>- 查看关联的信息 ：Relation<br>  - 域名绑定：Domain</h2></li>
-</ul>
+                <h2 id="第2篇：蠕虫病毒"><a href="#第2篇：蠕虫病毒" class="headerlink" title="第2篇：蠕虫病毒"></a>第2篇：蠕虫病毒</h2><h3 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h3><p>​	蠕虫病毒是一种十分古老的计算机病毒，它是一种自包含的程序（或是一套程序），通常通过网络途径传播，每入侵到一台新的计算机，它就在这台计算机上复制自己，并自动执行它自身的程序。</p>
+<p>常见的蠕虫病毒：熊猫烧香病毒 、冲击波&#x2F;震荡波病毒、conficker病毒等。</p>
+<h3 id="0x01-应急场景"><a href="#0x01-应急场景" class="headerlink" title="0x01 应急场景"></a>0x01 应急场景</h3><p>​	某天早上，管理员在出口防火墙发现内网服务器不断向境外IP发起主动连接，内网环境，无法连通外网，无图脑补。</p>
+<h3 id="0x02-事件分析"><a href="#0x02-事件分析" class="headerlink" title="0x02 事件分析"></a>0x02 事件分析</h3><p>在出口防火墙看到的服务器内网IP，首先将中病毒的主机从内网断开，然后登录该服务器，打开D盾_web查杀查看端口连接情况，可以发现本地向外网IP发起大量的主动连接：</p>
+<p><img src="/image/win-6-1.png"></p>
+<p>通过端口异常，跟踪进程ID，可以找到该异常由svchost.exe windows服务主进程引起，svchost.exe向大量远程IP的445端口发送请求：</p>
+<p><img src="/image/win-6-2.png"></p>
+<p>这里我们推测可以系统进程被病毒感染，使用卡巴斯基病毒查杀工具，对全盘文件进行查杀，发现c:\windows\system32\qntofmhz.dll异常：</p>
+<p><img src="/image/win-6-3.png"></p>
+<p>使用多引擎在线病毒扫描（<a target="_blank" rel="noopener" href="http://www.virscan.org/%EF%BC%89">http://www.virscan.org/）</a> 对该文件进行扫描:</p>
+<p><img src="/image/win-6-4.png"></p>
+<p>确认服务器感染conficker蠕虫病毒，下载conficker蠕虫专杀工具对服务器进行清查，成功清楚病毒。 </p>
+<p><img src="/image/win-6-5.png"></p>
+<p>大致的处理流程如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、发现异常：出口防火墙、本地端口连接情况，主动向外网发起大量连接</span><br><span class="line">2、病毒查杀：卡巴斯基全盘扫描，发现异常文件</span><br><span class="line">3、确认病毒：使用多引擎在线病毒对该文件扫描，确认服务器感染conficker蠕虫病毒。</span><br><span class="line">4、病毒处理：使用conficker蠕虫专杀工具对服务器进行清查，成功清除病毒。</span><br></pre></td></tr></table></figure>
+
+<h3 id="0x04-预防处理措施"><a href="#0x04-预防处理措施" class="headerlink" title="0x04 预防处理措施"></a>0x04 <strong>预防处理措施</strong></h3><p>​	在政府、医院内网，依然存在着一些很古老的感染性病毒，如何保护电脑不受病毒感染，总结了几种预防措施：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、安装杀毒软件，定期全盘扫描</span><br><span class="line">2、不使用来历不明的软件，不随意接入未经查杀的U盘</span><br><span class="line">3、定期对windows系统漏洞进行修复，不给病毒可乘之机</span><br><span class="line">4、做好重要文件的备份，备份，备份。</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -752,7 +508,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/03/30/%E6%BA%AF%E6%BA%90/">http://example.com/2023/03/30/%E6%BA%AF%E6%BA%90/</a>
+                    <a href="http://example.com/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC2%E7%AF%87%EF%BC%9A%E8%A0%95%E8%99%AB%E7%97%85%E6%AF%92/">http://example.com/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC2%E7%AF%87%EF%BC%9A%E8%A0%95%E8%99%AB%E7%97%85%E6%AF%92/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -961,7 +717,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/README/">
+                <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC3%E7%AF%87%EF%BC%9A%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92/">
                     <div class="card-image">
                         
                         
@@ -998,7 +754,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/30/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                <a href="/2023/04/03/%E7%AC%AC04%E7%AB%A0%EF%BC%9AWindows%E5%AE%9E%E6%88%98%E7%AF%87/%E7%AC%AC1%E7%AF%87%EF%BC%9AFTP%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/">
                     <div class="card-image">
                         
                         
@@ -1015,7 +771,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
                             </span>
                         <span class="publish-author">
                             
